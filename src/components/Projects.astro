@@ -1,0 +1,76 @@
+---
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+
+const PROJECTS = [
+  {
+    title: "Informe Findeter 2023",
+    description:
+      "Informe de Gestión y sostenibilidad 2023, diseño y desarrollo web del informe acompañando al equipo de comunicación de Findeter a presentar una versión web dinamica y facil",
+    link: "https://finde-informe.vercel.app/",
+    image: "/projects/proyecto1.png",
+    altText: "Informe Findeter 2023",
+  },
+  {
+    title: "Imagen Latente | Colcha de Retazos",
+    description:
+      "Creación de imagen y web de un proyecto social llevado a cabo en Ciudad Bolivar, que cuenta historias de personas que han sufrido violencia física y sexual, y como han encontrado un nuevo propósito en su vida.",
+    link: "https://imagenlatentenuxt.vercel.app/",
+    image: "/projects/proyecto2.png",
+  },
+  {
+    title: "KTM Venezuela | Lanzamiento de marca",
+    description:
+      "Creamos la web de la marca KTM Venezuela para su lanzamiento en Venezuela",
+    link: "https://ktmvenezuela.vercel.app/",
+    image: "/projects/proyecto3.png",
+  },
+  {
+    title: "SuRed | Nueva imagen",
+    description:
+      "Creamos y testeamos la nueva imagen de la App suRed, acompañando el proceso de modernización de la app y de los nuevos servicios que ofrece.",
+    link: "https://sured-front.vercel.app/",
+    image: "/projects/proyecto4.png",
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, link, altText }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt={altText}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2" />
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

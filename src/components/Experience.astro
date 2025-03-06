@@ -1,0 +1,47 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Oct 2022 - Actualmente",
+    title: "Diseñador UX/UI Lead",
+    company: "Periferia IT Group",
+    description:
+      "Lidero equipos de diseño para cumplir las necesidades de los usuarios y clientes. Asegurando cumplir con las necesidades del negocio apoyado de metodologías ágiles e impulsando innovación centrada en el usuario. he trabajado con empresas en Colombia como Bancamia, SuRed, Incocrédito y En Suramerica con Alicorp de Perú ",
+    link: "https://www.figma.com/design/Di0YuG3ftAmxiC9KOx41zj/P%C3%A1gina-web?node-id=2012-44&t=KJfcYWIqypXKsb56-1",
+  },
+  {
+    date: "Mayo 2024 - Diciembre 2024",
+    title: "Gestor de productos digitales",
+    company: "Seguros del pichincha, Ecuador",
+    description:
+      "Definir y liderar la estrategia de UX/UI, alineando diseño y experiencia con objetivos de negocio. Coordinar con tecnología, optimizar mediante pruebas de usabilidad y métricas. Crear roadmaps, gestionar sistemas de diseño y supervisar equipos ágiles.",
+    link: "https://www.figma.com/proto/AxkwK243aEe9Ssox3Rl9QL/General?page-id=4%3A3&node-id=5-20431&p=f&viewport=619%2C154%2C0.03&t=eccHqPZg0ztjLO41-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=5%3A20487&show-proto-sidebar=1",
+  },
+  {
+    date: "Noviembre 2021 - Octubre 2022",
+    title: "Diseñador web | Webmaster",
+    company: "Compensar",
+    description:
+      "Diseñar y optimizar flujos de solicitud en plataforma de crédito, mejorando la experiencia del usuario y asegurando navegación intuitiva. Desarrollar el simulador de cuota, mantener coherencia visual y garantizar la integración con equipos de desarrollo y tecnología.",
+    link: "https://simcredito.vercel.app/",
+  },
+  {
+    date: "Noviembre 2017 - Noviembre 2021",
+    title: "Especialista Digital | Webmaster",
+    company: "Instituto Nacional Para Ciegos",
+    description:
+      "Asesorar a entidades públicas y privadas en la implementación de accesibilidad web, garantizando estándares inclusivos. Diseñar y optimizar productos digitales para usuarios con discapacidad visual, gestionando el área de diseño y experiencia e impulsando iniciativas multisensoriales de inclusión.",
+    link: "https://www.inci.gov.co/blog/accesibilidad-en-aplicaciones-moviles",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
